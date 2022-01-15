@@ -1,7 +1,7 @@
 # create_github_issues
 
-CSVのタイトルをもとにGithub issueを作成するだけのプロダクト.  
-Epicにすることもできる.  
+CSVファイルのタイトルリストをもとに、Github issueを作成するだけのプロダクト.  
+Zenhubを使っている場合は対象のファイルをEpicにすることもできる.  
 
 # 動作環境
 - Mac OS Big Sur version 11.4
