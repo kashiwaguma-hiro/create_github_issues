@@ -1,5 +1,5 @@
 #/bin/sh
-set -eu
+set -e -u -o pipefail
 
 function usage {
   echo "使い方: ./github-issue-creater.sh -o owner -r repo -f filepath"
@@ -42,15 +42,14 @@ fi
 printf "Create issue"
 cat $FILE | while read LINE || [ -n "${LINE}" ]; do
 
-  RESULT=$(curl -X POST https://api.github.com/repos/$OWNER/$REPO/issues \
+  curl -X POST https://api.github.com/repos/$OWNER/$REPO/issues \
       $CURL_OPTS \
       -H "Authorization: token $GITHUB_PERSONAL_TOKEN" \
       -H "Accept: application/vnd.github.v3+json" \
       -d "{
         \"title\": $LINE,
-        \"body\" :\"$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\\\n/g' ./body_template.txt)\"
-      }")
-  echo $RESULT | jq -r "if .html_url? then .html_url else . end" >> $LOGFILE # issueのURLまたはリクエスト失敗時のbodyをまるごと出力
+        \"body\" :\"`sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\\\n/g' ./body_template.txt`\"
+      }" | jq -r "if .html_url? then .html_url else . end" >> $LOGFILE # issueのURLまたはリクエスト失敗時のbodyをまるごと出力
 
   printf "." # progress message.
   sleep 3
