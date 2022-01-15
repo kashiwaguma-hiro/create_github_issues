@@ -1,4 +1,5 @@
-# create_github_issues
+# github-issue-creater
+
 
 CSVファイルのタイトルリストをもとに、Github issueを作成するだけのプロダクト.  
 Zenhubを使っている場合は対象のファイルをEpicにすることもできる.  
