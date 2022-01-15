@@ -16,6 +16,7 @@ Zenhubを使っている場合は対象のファイルをEpicにすることも�
 -o owner_name      : issue発行先のリポジトリの所有者.
 -r repository_name : issue発行先のリポジトリ名.
 -f filepath        : issueのタイトルリストのファイルパス.
+-d debug           : デバッグモードで実行します.curlが失敗する際の原因究明にご利用ください.
 -h                 : 本メッセージを出力.
 ```
 
