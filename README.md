@@ -51,6 +51,12 @@ Zenhubを使っている場合は対象のファイルをEpicにすることも�
    https://api.github.com/repos/kashiwaguma-hiro/github-issue-creater/issues/3
    ```
 
+## トラブルシューティング
+- 実行時に「 (22) The requested URL returned error: 403」と出力される場合はトークンの設定が間違っている可能性があります。
+  - SSO連携しているアカウントで Organization リポジトリへ issueを登録する場合は認証が必要な場合があります
+    - [個人トークンの設定画面](https://github.com/settings/tokens)
+    - ![設定のイメージ](img/configure_sso.png)
+
 ## 参考にさせていただいたサイト
 - https://docs.github.com/ja/rest/guides/getting-started-with-the-rest-api
 - https://docs.github.com/en/rest/reference/issues#create-an-issue
