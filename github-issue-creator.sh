@@ -2,7 +2,7 @@
 set -e -u -o pipefail
 
 function usage {
-  echo "使い方: ./github-issue-creater.sh -o owner -r repo -f filepath"
+  echo "使い方: ./github-issue-creator.sh -o owner -r repo -f filepath"
   echo "-o owner_name      : issue発行先のリポジトリの所有者."
   echo "-r repository_name : issue発行先のリポジトリ名."
   echo "-f filepath        : issueのタイトルリストのファイルパス."

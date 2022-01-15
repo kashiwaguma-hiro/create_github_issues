@@ -1,4 +1,4 @@
-# github-issue-creater
+# github-issue-creator
 
 
 CSVファイルのタイトルリストをもとに、Github issueを作成するだけのプロダクト.  
@@ -11,8 +11,8 @@ Zenhubを使っている場合は対象のファイルをEpicにすることも�
 
 ## 使い方
 ```
-./github-issue-creater.sh -h
-使い方: ./github-issue-creater.sh -o owner -r repo -f filepath
+./github-issue-creator.sh -h
+使い方: ./github-issue-creator.sh -o owner -r repo -f filepath
 -o owner_name      : issue発行先のリポジトリの所有者.
 -r repository_name : issue発行先のリポジトリ名.
 -f filepath        : issueのタイトルリストのファイルパス.
@@ -36,19 +36,19 @@ Zenhubを使っている場合は対象のファイルをEpicにすることも�
    ```
 
 1. issueを作成する  
-   例: https://github.com/kashiwaguma-hiro/github-issue-creater リポジトリへissueを発行したい場合
+   例: https://github.com/kashiwaguma-hiro/github-issue-creator リポジトリへissueを発行したい場合
    ```Shell
    $ pwd
-   /Users/kashiwaguma-hiro/git/github-issue-creater
+   /Users/kashiwaguma-hiro/git/github-issue-creator
 
    $ GITHUB_PERSONAL_TOKEN=1で発行したトークン \
-     ./github-issue-creater.sh -o kashiwaguma-hiro -r github-issue-creater -f example.csv
+     ./github-issue-creator.sh -o kashiwaguma-hiro -r github-issue-creator -f example.csv
    Create issue...done!
 
    $ cat created_issues_yyyyMMddhhmmss.log
-   https://api.github.com/repos/kashiwaguma-hiro/github-issue-creater/issues/1
-   https://api.github.com/repos/kashiwaguma-hiro/github-issue-creater/issues/2
-   https://api.github.com/repos/kashiwaguma-hiro/github-issue-creater/issues/3
+   https://api.github.com/repos/kashiwaguma-hiro/github-issue-creator/issues/1
+   https://api.github.com/repos/kashiwaguma-hiro/github-issue-creator/issues/2
+   https://api.github.com/repos/kashiwaguma-hiro/github-issue-creator/issues/3
    ```
 
 ## トラブルシューティング
