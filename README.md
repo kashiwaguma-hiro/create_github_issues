@@ -51,6 +51,21 @@ Zenhubを使っている場合は対象のファイルをEpicにすることも�
    https://api.github.com/repos/kashiwaguma-hiro/github-issue-creator/issues/3
    ```
 
+1. (オプション)以下は Zenhubを使っていて、かつissueをEpicsに変換したい場合に実行ください  
+
+1. Zenhubトークンを生成する  
+   - [生成ページ](https://app.zenhub.com/dashboard/tokens)
+   - ![設定のイメージ](img/zenhub_token.png)
+
+1. Zehubのrepo_idを確認する  
+   Zenhubのボードに移動しURLのクエリパラメータ repos が repo_id.  
+   例： https://github.com/kashiwaguma-hiro/test_issue#workspaces/XXXXXXXXX/board?repos=XXXXX ←末尾のこれ
+
+1. 生成したepicに変換する  
+   ```Shell
+   $ ZENHUB_TOKEN=5で生成したZenhubトークン ./convert_to_epic.sh -r 6で確認したrepo_id -f 3のログファイル(created_issues_yyyyMMddhhmmss.log)
+   ```
+
 ## トラブルシューティング
 - 実行時に「 (22) The requested URL returned error: 403」と出力される場合はトークンの設定が間違っている可能性があります。
   - SSO連携しているアカウントで Organization リポジトリへ issueを登録する場合は認証が必要な場合があります
